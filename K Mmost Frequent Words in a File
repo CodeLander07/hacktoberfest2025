@@ -1,0 +1,21 @@
+from collections import Counter
+
+
+def process_text(text, k):
+    
+    # Store Frequencies of all words
+    freq_map = Counter(text.split())
+    
+    # Get the top k frequent items
+    res = freq_map.most_common(k)
+    
+    for word, freq in res:
+        print(f'{word} : {freq}')
+
+if __name__ == '__main__':
+    text = 'Welcome to the world of Geeks Geeks for Geeks is great'
+    process_text(text, 5)
+    # to read from file
+    # with open('file.txt', 'r') as file:
+    #     text = file.read()
+    #     process_text(text, k)
